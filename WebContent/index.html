@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="crudAtendimento">
+<head>
+<meta charset="UTF-8">
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-resource.min.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<title>Sistema Atendimento - Cassimiro</title>
+</head>
+<body>
+
+	<div ng-controller="AtendimentoController" clas="well" style="width:700px; margin-top: 60px; margin-left: auto; margin-right: auto;">
+		
+		<button class="btn btn-default" ng-click="novo();">Novo</button>
+		
+		<button class="btn btn-default" ng-click="salvar();">Salvar</button>
+		
+		<button class="btn btn-default" ng-click="editar();">Editar</button>
+		
+		<button class="btn btn-default" ng-click="excluir();">Excluir</button>
+		
+		<hr />
+		
+		<form name="atendimentoForm" class="form-inline">
+			<table>
+				<tr class="row">
+					<td class="col-xs-2">Protocolo</td>
+					<td class="col-xs-3"><input type="text" style="width:100px;" ng-model="atendimento.protocolo"/></td>
+				</tr>
+			
+			</table>
+		
+		</form>
+		
+	</div>
+
+</body>
+</html>
+
