@@ -18,7 +18,7 @@ public class AtendimentoDaoImpl implements AtendimentoDao{
 	@Override
 	public Atendimento salvarOuAtualizar(Atendimento atendimento) {
 		
-		if(atendimento.getProtocolo() != null) {
+		if(atendimento.getId() != null) {
 			atendimento = em.merge(atendimento);
 		}
 		
@@ -44,9 +44,9 @@ public class AtendimentoDaoImpl implements AtendimentoDao{
 	}
 
 	@Override
-	public Atendimento findByProtocolo(Integer protocolo) {
+	public Atendimento findById(Long id) {
 		
-		return em.find(Atendimento.class, protocolo);
+		return em.find(Atendimento.class, id);
 	}
 	
 	

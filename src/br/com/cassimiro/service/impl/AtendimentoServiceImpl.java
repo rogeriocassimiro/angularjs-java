@@ -23,8 +23,8 @@ public class AtendimentoServiceImpl implements AtendimentoService{
 	
 	@Transactional
 	@Override
-	public void remover(Integer protocolo) {
-		this.atendimentoDao.remover(this.atendimentoDao.findByProtocolo(protocolo));
+	public void remover(Long id) {
+		this.atendimentoDao.remover(this.atendimentoDao.findById(id));
 	}
 	
 	@Transactional

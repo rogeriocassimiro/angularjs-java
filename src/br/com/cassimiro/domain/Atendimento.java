@@ -10,17 +10,27 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ATENDIMENTO")
-public class Atendimento implements Serializable{
+public class Atendimento implements Serializable {
 
 	private static final long serialVersionUID = -5342725151990997575L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
 	private Integer protocolo;
-	
+
 	private String nomeCliente;
-	
+
 	private String detalhamento;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public Integer getProtocolo() {
 		return protocolo;
@@ -45,7 +55,5 @@ public class Atendimento implements Serializable{
 	public void setDetalhamento(String detalhamento) {
 		this.detalhamento = detalhamento;
 	}
-	
-	
-	
+
 }

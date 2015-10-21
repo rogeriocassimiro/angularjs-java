@@ -12,5 +12,5 @@ public interface AtendimentoDao {
 	
 	List<Atendimento> listar();
 	
-	Atendimento findByProtocolo(Integer protocolo);
+	Atendimento findById(Long id);
 }

@@ -33,8 +33,8 @@ public class AtendimentoController {
 	}
 	
 	@DELETE
-	@Path("/{protocolo}")
-	public void remover(@PathParam("atendimento") Integer protocolo) {
-		this.atendimentoService.remover(protocolo);
+	@Path("/{id}")
+	public void remover(@PathParam("id") Long id) {
+		this.atendimentoService.remover(id);
 	}
 }

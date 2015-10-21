@@ -8,7 +8,7 @@ public interface AtendimentoService {
 
 	void salvarOuAtualizar(Atendimento atendimento);
 
-	void remover(Integer protocolo);
+	void remover(Long id);
 	
 	List<Atendimento> listar();
 }
