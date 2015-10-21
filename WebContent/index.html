@@ -17,22 +17,50 @@
 		
 		<button class="btn btn-default" ng-click="salvar();">Salvar</button>
 		
-		<button class="btn btn-default" ng-click="editar();">Editar</button>
-		
 		<button class="btn btn-default" ng-click="excluir();">Excluir</button>
 		
 		<hr />
 		
 		<form name="atendimentoForm" class="form-inline">
-			<table>
+			<table class="table table-responsive">
 				<tr class="row">
-					<td class="col-xs-2">Protocolo</td>
-					<td class="col-xs-3"><input type="text" style="width:100px;" ng-model="atendimento.protocolo"/></td>
+					<td class="col-xs-2">Protocolo:</td>
+					<td class="col-xs-4"><input type="text" class="form-control" style="width: 100%" ng-model="atendimento.protocolo"/></td>
 				</tr>
-			
+				<tr class="row">
+					<td class="col-xs-2">Nome cliente:</td>
+					<td class="col-xs-8"><input type="text" class="form-control" style="width: 100%" ng-model="atendimento.nomeCliente"/></td>
+				</tr>
+				<tr class="row">
+					<td class="col-xs-2">Detalhamento:</td>
+					<td class="col-xs-8"><input type="text" class="form-control" style="width: 100%" ng-model="atendimento.detalhamento"/></td>
+				</tr>
 			</table>
-		
 		</form>
+		
+		<hr />
+		
+		<div class="row">
+			<div class="col-sm-12">
+				<input type="text" ng-model="query" class="form-controler" style="width: 100%" placeholder="O que está procurando?"/>
+				<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th>Protocolo</th>
+						<th>Nome</th>
+						<th>Detalhamento</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="atendimento in atendimentos | filter : query" ng-click="seleciona(atendimento);">
+						<td>{{atendimento.protocolo}}</td>
+						<td>{{atendimento.nomeCliente}}</td>
+						<td>{{atendimento.detalhamento}}</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
 		
 	</div>
 
